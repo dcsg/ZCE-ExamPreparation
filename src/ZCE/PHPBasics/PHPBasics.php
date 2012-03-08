@@ -16,4 +16,4 @@ class PHPBasics
     }
 }
 
-new \PHPBasics();
+new PHPBasics();

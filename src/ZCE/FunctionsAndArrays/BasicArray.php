@@ -27,4 +27,4 @@ class BasicArray
     }
 }
 
-new \BasicArray();
+new BasicArray();
