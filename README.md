@@ -1,4 +1,4 @@
-Preparation to the ZCE PHP 5.3 exam
+Preparation to the ZCE PHP 5.3 exam [![Build Status](https://secure.travis-ci.org/danielcsgomes/ZCE-ExamPreparation.png?branch=master)](http://travis-ci.org/danielcsgomes/ZCE-ExamPreparation)
 ===================================
 
 Official page of the certification:
