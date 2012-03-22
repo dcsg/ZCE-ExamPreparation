@@ -1,5 +1,0 @@
-<?php
-
-/**
- * Validate email
- */
