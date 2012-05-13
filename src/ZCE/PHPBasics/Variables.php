@@ -14,7 +14,21 @@ namespace ZCE\PHPBasics;
  *
  * @author Daniel Gomes <me@danielcsgomes.com>
  */
+
 class Variables
 {
-
+    public function __construct()
+    {
+        //Globals
+        $GLOBALS["sum"] = $GLOBALS["x"]+$GLOBALS["y"];
+    }
 }
+
+//Declared the values to the global variables
+$x = 10;
+$y = 20;
+
+$variablesTest = new Variables();
+
+// print the result - output 30
+print($sum);
