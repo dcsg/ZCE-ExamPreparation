@@ -14,39 +14,24 @@ namespace ZCE\FunctionsAndArrays;
  */
 class Functions
 {
-    /**
-     * Anonymous function variable
-     */
-    public $squareSize;
+    public function anonymousFunction(){
 
-    /**
-     * Creates the anonymous function
-     */
-    public function __construct(){
-        $this->squareSize = create_function('$x','print($x*$x);');
+        //Creates the anonymous function
+        $squareSize = create_function('$x','print("<br/>x*x = " . $x*$x);');
+        printf("<br/><br/>---- Anonymous Function<br/>Anonymous Function name: %s", $squareSize);
+        $squareSize(5);
     }
 
     public function argumentsExample()
     {
-        printf("Arguments length: " . func_num_args() );
-        printf("<br>Argument #1 if exists: " . func_get_arg(0) );
-        printf("<br>Argument #2 if exists: " . func_get_arg(1) );
-        print("<br>All Arguments of the function: ");
+        printf("---- Function Arguments<br/>Arguments length: " . func_num_args() );
+        printf("<br/>Argument #1 if exists: " . func_get_arg(0) );
+        printf("<br/>Argument #2 if exists: " . func_get_arg(1) );
+        print("<br/>All Arguments of the function: ");
         print_r(func_get_args());
     }
 }
 
 $function = new Functions();
 $function->argumentsExample(1.5,9,63);
-$function->squareSize(5);
-
-
-
-/**
- * Creation of an anonymous function
- *
-
-$funcSingleQuote    = create_function('$x','return $x*$x;');
-$funcDoubleQuote    = create_function("\$x", "return \$x*\$x;"); //with double quotes the dollar must be escaped
-var_dump($funcSingleQuote(10)); //output 100
-var_dump($funcDoubleQuote(10)); //output 100*/
+$function->anonymousFunction();
