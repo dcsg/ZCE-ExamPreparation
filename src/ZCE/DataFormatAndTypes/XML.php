@@ -17,15 +17,16 @@ namespace ZCE\DataFormatAndTypes;
 class XMLBasics
 {
     static $XML_STRING = <<<XML
-    <a>
-     <b>
-      <c>text</c>
-      <c>stuff</c>
-     </b>
-     <d>
-      <c>code</c>
-     </d>
-    </a>
+<?xml version="1.0" standalone="yes"?>
+<a xmlns:p="http://example.org/ns" xmlns:t="http://example.org/test">
+    <p:b>
+        <c>text</c>
+        <c>stuff</c>
+    </p:b>
+    <d xmlns:s="http://example.org/ns">
+        <c>code</c>
+    </d>
+</a>
 XML;
 
     static $DOM_STRING = <<<XML
@@ -70,14 +71,36 @@ XML;
 // ============== using xpath to search inside the xml content
 $xmlBasic = new XMLBasics();
 $simpleXML= $xmlBasic->getSimpleXML();
-$result = $simpleXML->xpath('/a/b/c'); //Search for <a><b><c>
+$result = $simpleXML->xpath('/a/p:b/c'); //Search for <a><p:b><c>
 printf($result[0] . " and " . $result[1] . "\n"); //Prints: text and stuff
 
 // ============== get the tag name
 printf("tag name: " . $simpleXML->getName() . "\n"); //prints "a"
 
-$simpleXML = $xmlBasic->getSimpleXMLIterator();
-printf("children tag name: " . $simpleXML->children()->getName() . "\n"); //prints the children tag name
+$simpleXMLIterator = $xmlBasic->getSimpleXMLIterator();
+printf("children tag name: " . $simpleXMLIterator->children()->getName() . "\n"); //prints the children tag name
+
+// ============== get the namespaces
+
+//Gets the namespaces used in the document
+$nsUsed = $simpleXML->getNamespaces(true);
+printf("namespaces used: " . $nsUsed['p'] ."\n total used: " . count($nsUsed) . "\n");
+
+//gets the namespaces declared in the root tag of the document
+$nsDoc = $simpleXML->getDocNamespaces();
+printf("namespaces declared: " . $nsDoc['p'] ." ". $nsDoc['t'] ."\n total declared: " . count
+($nsDoc) ."\n");
+
+//gets the namespaces declared in all elements of the document
+$nsDoc = $simpleXML->getDocNamespaces(true);
+printf("namespaces declared all elements: ");
+foreach($nsDoc as $elem)
+{
+    echo $elem ." ";
+}
+printf("\n total declared all elements: " .
+    count
+($nsDoc) ."\n");
 
 
 
