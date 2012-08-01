@@ -66,8 +66,11 @@ XML;
 }
 
 /**
- * SimpleXML Element
+ * ##########################################################
+ * ################    SimpleXML     ########################
+ * ##########################################################
  */
+
 // ============== using xpath to search inside the xml content
 $xmlBasic = new XMLBasics();
 $simpleXML= $xmlBasic->getSimpleXML();
@@ -102,14 +105,23 @@ printf("\n total declared all elements: " .
     count
 ($nsDoc) ."\n");
 
+// ============== simplexml_import_dom function
+$domString = $xmlBasic->getDOMDocumentString();
+$simpleXML = simplexml_import_dom($domString);
+printf("Book title: " . $simpleXML->book[0]->title . "\n");
+
+// ============== simplexml_load_file function
+$simpleXML = simplexml_load_file("../../Resources/example.xml");
+printf("Movie title: " . $simpleXML->movie[0]->title . "\n");
+
+// ============== Add Attribute and asXML()
+$movieTitle = $simpleXML->movie[0]->title;
+$movieTitle->addAttribute('stars', '3');
+echo $simpleXML->asXML(); // output: ... <title stars="3" >PHP: Behind the Parser</title> ...
 
 
 /**
- * SimpleXML Functions
+ * @TODO: dom->document_element(), xml_set_element_handler, xml_set_object,
+ * xml_parse_into_struct, xml_parser_create_ns
  */
-// simplexml_import_dom
-$domString = $xmlBasic->getDOMDocumentString();
-$simpleXML = simplexml_import_dom($domString);
-printf("Book title: " . $simpleXML->book[0]->title);
-
 
