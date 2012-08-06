@@ -29,7 +29,7 @@ class XMLBasics
 </a>
 XML;
 
-    static $DOM_STRING = <<<XML
+    static $ANOTHER_XML_STRING = <<<XML
     <books>
         <book>
             <title>blah</title>
@@ -53,7 +53,7 @@ XML;
     public function getDOMDocumentString()
     {
         $dom = new \DOMDocument();
-        $dom->loadXML(XMLBasics::$DOM_STRING);
+        $dom->loadXML(XMLBasics::$ANOTHER_XML_STRING);
         return $dom;
     }
 
@@ -111,7 +111,7 @@ $simpleXML = simplexml_import_dom($domString);
 printf("Book title: " . $simpleXML->book[0]->title . "\n");
 
 // ============== simplexml_load_file function
-$simpleXML = simplexml_load_file("../../Resources/example.xml");
+$simpleXML = simplexml_load_file("../../../Resources/example.xml");
 printf("Movie title: " . $simpleXML->movie[0]->title . "\n");
 
 // ============== Add Attribute and asXML()
