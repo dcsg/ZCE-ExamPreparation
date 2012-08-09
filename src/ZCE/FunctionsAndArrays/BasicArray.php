@@ -35,3 +35,7 @@ class BasicArray
 }
 
 new BasicArray();
+
+$a = 'foo';
+echo $a['bar']; // since 'bar' doesn't exist it will assume 0 and will output the first char 'f' of $a
+
