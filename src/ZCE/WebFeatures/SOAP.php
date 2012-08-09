@@ -40,7 +40,7 @@ class SOAP
 
     public function GetCountryInfo($ianaCode = null)
     {
-        if(!isset($this->client['countries']))
+        if(!is_array($this->client['countries']))
             $this->GetAllCountries();
 
         if(!is_null($ianaCode) && array_key_exists($ianaCode, $this->countries))
@@ -52,9 +52,6 @@ class SOAP
             print_r("This '".$ianaCode."' is not a valid ianacode.\n");
         }
     }
-
-
-
 }
 
 $client = new SOAP();

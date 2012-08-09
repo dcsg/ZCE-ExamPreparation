@@ -11,17 +11,21 @@ namespace ZCE\FunctionsAndArrays;
 
 class BasicArray
 {
+    static $ARRAY_ONE = array(
+        'a' => 'Portugal',
+        'b' => 'Spain'
+    );
+    static $ARRAY_TWO = array(
+        'a' => 'Lisbon',
+        'c' => 'Barcelona',
+        'Faro'
+    );
+
+
     function __construct()
     {
-        $data = array(
-            0 => 1,
-            3 => 2,
-            5 => 3,
-            2 => 5,
-            1 => 4
-        );
-
         //order by keys
+        $data = BasicArray::$ARRAY_ONE;
         ksort($data);
         $keysOrder = $data;
 
@@ -37,5 +41,15 @@ class BasicArray
 new BasicArray();
 
 $a = 'foo';
-echo $a['bar']; // since 'bar' doesn't exist it will assume 0 and will output the first char 'f' of $a
+echo $a['bar']."\n"; // since 'bar' doesn't exist it will assume 0 and will output the first char 'f' of $a
+
+
+//Exercise 1
+$arr1 = array_diff(BasicArray::$ARRAY_ONE, BasicArray::$ARRAY_TWO);
+$arr2 = array_diff(BasicArray::$ARRAY_TWO, BasicArray::$ARRAY_ONE);
+
+$keys = array_keys($arr2);
+
+echo count($arr1) . ' - ' . $keys[0] ."\n";
+
 
