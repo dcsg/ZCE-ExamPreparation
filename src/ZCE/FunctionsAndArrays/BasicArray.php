@@ -44,7 +44,7 @@ $a = 'foo';
 echo $a['bar']."\n"; // since 'bar' doesn't exist it will assume 0 and will output the first char 'f' of $a
 
 
-//Exercise 1
+//Array Diff #1
 $arr1 = array_diff(BasicArray::$ARRAY_ONE, BasicArray::$ARRAY_TWO);
 $arr2 = array_diff(BasicArray::$ARRAY_TWO, BasicArray::$ARRAY_ONE);
 
@@ -52,4 +52,36 @@ $keys = array_keys($arr2);
 
 echo count($arr1) . ' - ' . $keys[0] ."\n";
 
+//Array Filter
+$array = array(
+    NULL,
+    0,
+    '0',
+    '',
+    -1,
+    'HelloWorld'
 
+);
+
+print_r(count(array_filter($array)) . PHP_EOL);      // output: 2
+
+
+// iteration functions
+reset(BasicArray::$ARRAY_TWO);                       // pointer to the begin of the array
+print_r(next(BasicArray::$ARRAY_TWO) . PHP_EOL);     // Output: Barcelona
+print_r(current(BasicArray::$ARRAY_TWO) . PHP_EOL);  // Output: Barcelona
+print_r(prev(BasicArray::$ARRAY_TWO) . PHP_EOL);     // Output: Lisbon
+print_r(end(BasicArray::$ARRAY_TWO) . PHP_EOL);      // Output: Faro
+
+foreach(BasicArray::$ARRAY_TWO as $k => $v)
+{
+    echo $v;                                         //Output: LisbonBarcelonaFaro
+}
+echo PHP_EOL;
+
+reset(BasicArray::$ARRAY_TWO);
+while(next(BasicArray::$ARRAY_TWO))
+{
+    echo current(BasicArray::$ARRAY_TWO);            //Output: BarcelonaFaro
+}
+echo PHP_EOL;
