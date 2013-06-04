@@ -1,6 +1,0 @@
-#!/bin/sh
-
-BASEDIR=$(dirname $0)
-cd $BASEDIR/..
-
-git clone https://github.com/symfony/ClassLoader.git vendor/symfony-class-loader

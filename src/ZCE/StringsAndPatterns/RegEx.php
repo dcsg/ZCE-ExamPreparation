@@ -21,6 +21,7 @@ class RegEx
     static $email = '/[a-zA-Z0-9._]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,4}/';
     static $phone = '/(00351|\+351)2\d{8}|^(2\d{8})$/m';
     static $cellphone = '/(00351|\+351)9\d{8}|^(9\d{8})$/m';
+    static $postal_code_canada = '/^[ABCEFGHJKLMNPRSTVXY][0-9][ABCEFGHJKLMNPRSTVWXYZ](\s+)?[0-9][ABCEFGHJKLMNPRSTVWXYZ][0-9]$/';
 
     public function matchStringAndPattern($pattern, $string)
     {

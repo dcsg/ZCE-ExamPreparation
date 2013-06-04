@@ -36,6 +36,15 @@ class RegExTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($regEx->matchStringAndPattern(RegEx::$cellphone, $cellphone));
     }
 
+    public function testCanadianPostalCode ()
+    {
+        $regEx = new RegEx();
+        $postal_code = "G0S1V0";
+        $this->assertTrue($regEx->matchStringAndPattern(RegEx::$postal_code_canada, $postal_code), 'Testing Canadian Postal Code"'.$postal_code.'", and should be valid');
+        $postal_code_space = "G0S 1V0";
+        $this->assertTrue($regEx->matchStringAndPattern(RegEx::$postal_code_canada, $postal_code_space), 'Testing Canadian Postal Code"'.$postal_code_space.'" (with a space), and should be valid');
+    }
+
     public function testZipCode ()
     {
         $regEx = new RegEx();

@@ -6,6 +6,7 @@ Official page of the certification:
 
 [![endorse](http://api.coderwall.com/danielcsgomes/endorsecount.png)](http://coderwall.com/danielcsgomes)
 
+
 ## What should you expect on this repository?
 This _repo_ has the purpose to _review all topics_ that are covered by the **ZCE PHP 5.3 exam**.
 This _repo_ is divide by the **ZCE** topics:
@@ -19,6 +20,26 @@ This _repo_ is divide by the **ZCE** topics:
 * String Patterns
 * Databases
 * I/O
+
+
+## Using
+
+Install using composer with development dependencies:
+
+    curl -sS https://getcomposer.org/installer | php
+
+Then, using the `composer.phar` file:
+
+    php composer.phar --dev install
+
+Rename phpunit.xml.dist to your own tates:
+
+    mv phpunit.xml.dist phpunit.xml
+
+Adjust phpunit.xml to your environment. To run tests, use the bin/phpunit binary:
+    
+    bin/phpunit
+
 
 ## License
 The code is licensed under the [MIT License](https://github.com/danielcsgomes/ZCE-ExamPreparation/blob/master/LICENSE)
