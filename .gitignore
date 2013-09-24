@@ -4,3 +4,5 @@ vendor
 tmp/
 phpunit.xml
 Resources/parameters.ini
+bin/
+*.sublime*
