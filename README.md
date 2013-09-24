@@ -36,6 +36,10 @@ Run tests:
     
     bin/phpunit
 
+## Credits
+
+ * [Daniel Gomes](https://github.com/danielcsgomes)
+ * [Other contributors](https://github.com/danielcsgomes/ZCE-ExamPreparation/graphs/contributors)
 
 ## License
 The code is licensed under the [MIT License](https://github.com/danielcsgomes/ZCE-ExamPreparation/blob/master/LICENSE)
