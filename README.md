@@ -32,11 +32,7 @@ Then, using the `composer.phar` file:
 
     php composer.phar --dev install
 
-Rename phpunit.xml.dist to your own tates:
-
-    mv phpunit.xml.dist phpunit.xml
-
-Adjust phpunit.xml to your environment. To run tests, use the bin/phpunit binary:
+Run tests:
     
     bin/phpunit
 
