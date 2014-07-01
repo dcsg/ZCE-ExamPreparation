@@ -1,4 +1,4 @@
-Preparation to the ZCE PHP 5.3 exam [![Build Status](https://secure.travis-ci.org/danielcsgomes/ZCE-ExamPreparation.png?branch=master)](http://travis-ci.org/danielcsgomes/ZCE-ExamPreparation)
+Preparation to the ZCE PHP 5.3 exam [![Build Status](https://secure.travis-ci.org/dcsg/ZCE-ExamPreparation.png?branch=master)](http://travis-ci.org/dcsg/ZCE-ExamPreparation)
 ===================================
 
 Official page of the certification:
@@ -38,8 +38,8 @@ Run tests:
 
 ## Credits
 
- * [Daniel Gomes](https://github.com/danielcsgomes)
- * [Other contributors](https://github.com/danielcsgomes/ZCE-ExamPreparation/graphs/contributors)
+ * [Daniel Gomes](https://github.com/dcsg)
+ * [Other contributors](https://github.com/dcsg/ZCE-ExamPreparation/graphs/contributors)
 
 ## License
-The code is licensed under the [MIT License](https://github.com/danielcsgomes/ZCE-ExamPreparation/blob/master/LICENSE)
+The code is licensed under the [MIT License](https://github.com/dcsg/ZCE-ExamPreparation/blob/master/LICENSE)
